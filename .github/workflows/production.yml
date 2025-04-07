@@ -58,9 +58,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: kaw393939/devops_demo:${{ github.sha }} # Uses the Git SHA for tagging
+          tags: krisa1329/IS601-HOMEWORK9:${{ github.sha }} # Uses the Git SHA for tagging
           platforms: linux/amd64,linux/arm64 # Multi-platform support
-          cache-from: type=registry,ref=kaw393939/devops_demo:cache
+          cache-from: type=registry,ref=krisa1329/IS601-HOMEWORK9:cache
           cache-to: type=inline,mode=max
           
       - name: Scan the Docker image
