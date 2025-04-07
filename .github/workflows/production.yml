@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10] # Define Python versions here
+        python-version: [3.10.12] # Define Python versions here
     steps:
       - uses: actions/checkout@v4
       
@@ -23,7 +23,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           
       - name: Cache Python packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -64,7 +64,7 @@ jobs:
           cache-to: type=inline,mode=max
           
       - name: Scan the Docker image
-        uses: aquasecurity/trivy-action@v0.5.8
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'kaw393939/devops_demo:${{ github.sha }}'
           format: 'table'

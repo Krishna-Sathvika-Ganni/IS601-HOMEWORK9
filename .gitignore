@@ -1,4 +1,7 @@
 venv
+_*pycache*_
+*.sqlite
+.vscode
 images
 .python_history# Byte-compiled / optimized / DLL files
 __pycache__/
