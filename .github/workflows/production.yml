@@ -58,11 +58,14 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: krisa1329/devops_demo:${{ github.sha }} # Uses the Git SHA for tagging
-          platforms: linux/amd64,linux/arm64 # Multi-platform support
+          tags: krisa1329/devops_demo:${{ github.sha }}
+          platforms: linux/amd64,linux/arm64
           cache-from: type=registry,ref=krisa1329/devops_demo:cache
           cache-to: type=inline,mode=max
-          
+
+      - name: Check Docker Image
+        run: docker images  # Check the list of images to ensure the image exists
+
       - name: Scan the Docker image
         uses: aquasecurity/trivy-action@master
         with:
