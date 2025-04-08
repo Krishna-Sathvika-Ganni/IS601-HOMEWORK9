@@ -58,9 +58,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: krisa1329/devops_demo:${{ github.sha }}
+          tags: krisa1329/restapi:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
-          cache-from: type=registry,ref=krisa1329/devops_demo:cache
+          cache-from: type=registry,ref=krisa1329/restapi:cache
           cache-to: type=inline,mode=max
 
       - name: Check Docker Image
@@ -69,7 +69,7 @@ jobs:
       - name: Scan the Docker image
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'krisa1329/devops_demo:${{ github.sha }}'
+          image-ref: 'krisa1329/restapi:${{ github.sha }}'
           format: 'table'
           exit-code: '1' # Fail the job if vulnerabilities are found
           ignore-unfixed: true
