@@ -21,8 +21,8 @@ app = FastAPI(
         redoc_url=None,
     contact={
         "name": "API Support",
-        "url": "http://www.qrcode.com/support",
-        "email": "support@qrcode.com",
+        "url": "http://www.example.com/support",
+        "email": "support@example.com",
     },
     license_info={
         "name": "Apache 2.0",
