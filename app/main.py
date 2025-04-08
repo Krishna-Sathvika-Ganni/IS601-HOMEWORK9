@@ -14,15 +14,15 @@ create_directory(QR_DIRECTORY)
 
 # This creates an instance of the FastAPI application.
 app = FastAPI(
-    title="QR Code Manager",
+    title="Manager of QR-Code",
     description="A FastAPI application for creating, listing available codes, and deleting QR codes. "
                 "It also supports OAuth for secure access.",
     version="0.0.1",
         redoc_url=None,
     contact={
         "name": "API Support",
-        "url": "http://www.example.com/support",
-        "email": "support@example.com",
+        "url": "http://www.qrcode.com/support",
+        "email": "support@qrcode.com",
     },
     license_info={
         "name": "Apache 2.0",
