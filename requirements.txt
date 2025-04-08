@@ -20,6 +20,7 @@ pydantic==2.11.2
 pydantic_core==2.33.1
 pypng==0.20220715.0
 pytest==8.3.5
+pytest-asyncio==0.26.0
 python-dotenv==1.1.0
 python-jose==3.4.0
 python-multipart==0.0.20
